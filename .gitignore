@@ -1,1 +1,3 @@
 grayScottModel/
+applications/solvers/grayScottFoam/Make/linux*
+applications/solvers/grayScottFoam/*.dep
