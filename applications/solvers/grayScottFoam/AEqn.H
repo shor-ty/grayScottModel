@@ -5,7 +5,7 @@
     (
         fvm::ddt(A)
      ==
-        fvm::laplacian(Da, A)
+        Da * fvm::laplacian(A)
       - C * fvm::Sp(B*B, A)
       + f
       - fvm::Sp(f, A)

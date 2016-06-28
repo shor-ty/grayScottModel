@@ -67,6 +67,8 @@
 
     if (method)
     {
+        Info<< "Field values of k and f are used\n" << endl;
+
         kPtr.reset
         (
             new volScalarField
@@ -103,14 +105,14 @@
     {
         Info<< "Constant values of k and f are used\n" << endl;
 
-        Info<< "Reading rate of conversion k\n" << endl;
+        Info<< "Reading rate of killing k\n" << endl;
 
         dimensionedScalar kValue
         (
             transportProperties.lookup("k")
         );
 
-        Info<< "Reading rate of progress f\n" << endl;
+        Info<< "Reading rate of feeding f\n" << endl;
 
         dimensionedScalar fValue
         (

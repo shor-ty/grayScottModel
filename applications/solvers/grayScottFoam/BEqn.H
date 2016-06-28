@@ -5,7 +5,7 @@
     (
         fvm::ddt(B)
      ==
-        fvm::laplacian(Db, B)
+        Db * fvm::laplacian(B)
       + C * fvm::Sp(A*B, B)
       - fvm::Sp(f, B)
       - fvm::Sp(k, B)
