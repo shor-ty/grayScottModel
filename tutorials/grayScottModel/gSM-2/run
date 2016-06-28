@@ -1,0 +1,74 @@
+#!/bin/bash
+#
+#----------------------------------------------#
+# Contributor: Tobias Holzmann                 #
+# Last Change: June 2016                       #
+# Topic:       Gray-Scott Model                #
+# Email:       Tobias.Holzmann@Holzmann-cfd.de #
+#----------------------------------------------#
+
+
+#------------------------------------------------------------------------------
+cd ${0%/*} || exit 1
+clear
+source clean
+
+
+#------------------------------------------------------------------------------
+echo -e "
+-------------------------------------------------------------------------------
+Tutorial by Tobias Holzmann
+Generated June 2016    
+OpenFOAM-2.3.x | 3.0.x
+
+
+Requirements: swak4Foam -> funkySetFields
+
+Topic: Modeling the Gray-Scott reaction diffusion equations 
+-------------------------------------------------------------------------------
+"
+
+
+#------------------------------------------------------------------------------
+echo -e "\n
+Create mesh
+-------------------------------------------------------------------------------
+"
+
+
+#------------------------------------------------------------------------------
+echo -e "   - blockMesh it ... (Did I ever used blockMesh before? (o: ? )"
+blockMesh > logMeshing
+
+
+#------------------------------------------------------------------------------
+echo -e "\n
+-------------------------------------------------------------------------------
+End Meshing\n
+"
+
+
+#------------------------------------------------------------------------------
+echo -e "   - Copy 0.org to 0"
+cp -r 0.org 0
+
+
+#------------------------------------------------------------------------------
+if [ `which grayScottFoam` ]
+then
+    echo -e "   - set initial conditions"
+    setFields > logSolve
+    funkySetFields -latestTime >> logSolve
+    echo -e "   - Start simulation (simple approach but still expensive ~3h)"
+    grayScottFoam >> logSolve
+else
+    echo -e "   - Can not start simulation, 'grayScottFoam' not available"
+    echo -e "   - You can find the solver and model on my homepage"
+fi
+
+
+#------------------------------------------------------------------------------
+echo -e "   - End\n\n"
+
+
+#------------------------------------------------------------------------------

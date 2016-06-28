@@ -27,9 +27,9 @@ The solver calculates two simple reaction-diffusion equations that are coupled. 
 * Switch to the branch you need
 
 * for version 2.3.x use the following command
-> git checkout flameletModel-2.3.x
+> git checkout grayScottModel-2.3.x
 * for version 3.0.x use the following command
-> git checkout flameletModel-3.0.x
+> git checkout grayScottModel-3.0.x
 * After that pull it
 > git pull
 * Now you have everything and you can start compiling
