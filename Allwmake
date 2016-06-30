@@ -1,1 +1,1 @@
-wmake applications/solvers/grayScottModel/
+wmake applications/solvers/grayScottFoam/

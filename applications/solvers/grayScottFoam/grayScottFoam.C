@@ -30,7 +30,6 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "fvCFD.H"
-#include "fvIOoptionList.H"
 #include "pimpleControl.H"
 #include "Random.H"
 
@@ -42,7 +41,6 @@ int main(int argc, char *argv[])
     #include "createTime.H"
     #include "createMesh.H"
     #include "createFields.H"
-    #include "createFvOptions.H"
 
     pimpleControl pimple(mesh);
 
