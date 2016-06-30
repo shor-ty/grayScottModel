@@ -177,3 +177,16 @@
 
     //- Add some small perputation to the fields
     #include "perputation.H"
+
+    Info<< "Reading solve option\n" << endl;
+
+    const Switch implicit(transportProperties.lookup("implicit"));
+
+    if (implicit)
+    {
+        Info<< "Calculation will be implicit\n" << endl;
+    }
+    else
+    {
+        Info<< "Calculation will be explicit\n" << endl;
+    }
