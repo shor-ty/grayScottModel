@@ -119,40 +119,36 @@
             transportProperties.lookup("f")
         );
 
-        IOobject kIO
-        (
-            "k",
-            runTime.timeName(),
-            mesh,
-            IOobject::NO_READ,
-            IOobject::NO_WRITE
-        );
-
         kPtr.reset
         (
             new volScalarField
             (
-                kIO,
+                IOobject
+                (
+                    "k",
+                    runTime.timeName(),
+                    mesh,
+                    IOobject::NO_READ,
+                    IOobject::NO_WRITE
+                ),
                 mesh,
                 kValue,
                 zeroGradientFvPatchField<scalar>::typeName
             )
         );
 
-        IOobject fIO
-        (
-            "f",
-            runTime.timeName(),
-            mesh,
-            IOobject::NO_READ,
-            IOobject::NO_WRITE
-        );
-
         fPtr.reset
         (
             new volScalarField
             (
-                fIO,
+                IOobject
+                (
+                    "f",
+                    runTime.timeName(),
+                    mesh,
+                    IOobject::NO_READ,
+                    IOobject::NO_WRITE
+                ),
                 mesh,
                 fValue,
                 zeroGradientFvPatchField<scalar>::typeName
@@ -173,7 +169,7 @@
     const scalar p = readScalar(transportProperties.lookup("p"));
 
     const volScalarField& f = fPtr();
-    const volScalarField& k = fPtr();
+    const volScalarField& k = kPtr();
 
     //- Add some small perputation to the fields
     #include "perputation.H"
@@ -190,3 +186,57 @@
     {
         Info<< "Calculation will be explicit\n" << endl;
     }
+
+    Info<< "Read if convection is used\n" << endl;
+
+    const Switch convection(transportProperties.lookup("convection"));
+
+    autoPtr<volVectorField> UPtr(NULL);
+
+    if (convection)
+    {
+        UPtr.reset
+        (
+            new volVectorField
+            (
+                IOobject
+                (
+                    "U",
+                    runTime.timeName(),
+                    mesh,
+                    IOobject::MUST_READ,
+                    IOobject::AUTO_WRITE
+                ),
+                mesh
+            )
+        );
+    }
+    else
+    {
+        UPtr.reset
+        (
+            new volVectorField
+            (
+                IOobject
+                (
+                    "U",
+                    runTime.timeName(),
+                    mesh,
+                    IOobject::NO_READ,
+                    IOobject::NO_WRITE
+                ),
+                mesh,
+                dimensionedVector
+                (
+                    "U",
+                    dimensionSet(0,1,-1,0,0,0,0),
+                    vector(0,0,0)
+                ),
+                zeroGradientFvPatchField<vector>::typeName
+            )
+        );
+    }
+
+    const volVectorField& U = UPtr;
+
+    #include "createPhi.H"
