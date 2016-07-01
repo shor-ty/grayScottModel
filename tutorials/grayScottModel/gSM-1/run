@@ -19,7 +19,7 @@ echo -e "
 -------------------------------------------------------------------------------
 Tutorial by Tobias Holzmann
 Generated June 2016    
-OpenFOAM-2.3.x | 3.0.x
+OpenFOAM-2.3.x | 3.0.x | 4.x
 
 
 Topic: Modeling the Gray-Scott reaction diffusion equations 
@@ -56,7 +56,7 @@ if [ `which grayScottFoam` ]
 then
     echo -e "   - set initial conditions"
     setFields > logSolve
-    echo -e "   - Start simulation (simple approach but still expensive ~3h)"
+    echo -e "   - Start simulation (simple approach but still takes a while)"
     grayScottFoam >> logSolve
 else
     echo -e "   - Can not start simulation, 'grayScottFoam' not available"

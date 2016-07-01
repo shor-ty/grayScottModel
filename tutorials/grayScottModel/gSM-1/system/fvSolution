@@ -17,17 +17,33 @@ FoamFile
 
 solvers
 {
-    "(A|B)"
+    A
     {
-        solver          ICCG;
+        solver          PBiCG; 
+        preconditioner  DILU;
+        tolerance       1e-12;
+        relTol          0.01;
+    }
+
+    AFinal
+    {
+        $A;
+
+        tolerance       1e-12;
+        relTol          0;
+    }
+
+    B
+    {
+        solver          PCG;
         preconditioner  FDIC;
         tolerance       1e-12;
         relTol          0.01;
     }
 
-    "(A|B)Final"
+    BFinal
     {
-        $A;
+        $B;
 
         tolerance       1e-12;
         relTol          0;
