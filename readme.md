@@ -26,7 +26,6 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 * Switch to the repository directory
 > cd grayScottModel 
 * Switch to the branch you need
-
 * for version 2.3.x use the following command
 > git checkout grayScottModel-2.3.x
 * for version 3.0.x use the following command
