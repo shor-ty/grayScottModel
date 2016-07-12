@@ -1,8 +1,8 @@
 
 //- Add a perputation to field A and B
 {
-    scalarField& AField = A.ref();
-    scalarField& BField = B.ref(); 
+    scalarField& AField = A.internalField();
+    scalarField& BField = B.internalField(); 
 
     //- New object of class Random
     Random obj(1);
