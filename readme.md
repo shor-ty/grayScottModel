@@ -43,3 +43,4 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 
 ### Contribution guidelines ###
 * If you have questions, hints or any suggestions please email me to Tobias.Holzmann@Holzmann-cfd.de
+
