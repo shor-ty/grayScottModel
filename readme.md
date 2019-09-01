@@ -1,14 +1,15 @@
-EADME #
+#README #
 
 ## Description of the Gray-Scott-Model
 
 The solver calculates two reaction-diffusion equations that are coupled. The model can be used to investigate into numerical schemes and code validations. There is also a convection term included and you can switch between implicit and explicit calculation.
 
 ### OpenFOAM Versions ###
-* Generated for version 
+* Generated for version
 ** 2.3.x **
 ** 3.0.x **
 ** 4.x **
+** 7.x **
 
 ### What is this repository for? ###
 * This model calculates two coupled reaction-diffusion equations
@@ -24,14 +25,16 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 * Clone the repository to the new folder
 > git clone git@bitbucket.org:shor-ty/grayScottModel.git
 * Switch to the repository directory
-> cd grayScottModel 
+> cd grayScottModel
 * Switch to the branch you need
 * for version 2.3.x use the following command
-> git checkout grayScottModel-2.3.x
+> git checkout grayScottFoam-2.3.x
 * for version 3.0.x use the following command
-> git checkout grayScottModel-3.0.x
+> git checkout grayScottFoam-3.0.x
 * for version 4.x use the following command
-> git checkout grayScottModel-4.x
+> git checkout grayScottFoam-4.x
+* for version 7.x use the following command
+> git checkout grayScottFoam-7.x
 * After that pull it
 > git pull
 * Now you have everything and you can start compiling
