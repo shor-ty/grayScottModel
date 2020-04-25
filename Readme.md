@@ -1,4 +1,6 @@
-#README #
+# README #
+
+Updated on April 2020 by Tobias Holzmann
 
 ## Description of the Gray-Scott-Model
 
@@ -19,31 +21,55 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 ### Compiling the application ###
 * Feel free to compile it where ever you want, but normally its nice to have a fixed folder for _user compiled stuff_
 * Make a new folder
-> mkdir -p $FOAM_RUN/../OpenFOAM_extensions
+```bash
+    mkdir -p $FOAM_RUN/../OpenFOAM_extensions
+```
 * Switch to the new folder
-> cd $FOAM_RUN/../OpenFOAM_extensions
+```bash
+    cd $FOAM_RUN/../OpenFOAM_extensions
+```
 * Clone the repository to the new folder
-> git clone git@bitbucket.org:shor-ty/grayScottModel.git
+```bash
+    git clone https://shor-ty@bitbucket.org/shor-ty/grayscottmodel.git grayScottModel
+```
 * Switch to the repository directory
-> cd grayScottModel
+```bash
+    cd grayScottModel
+```
 * Switch to the branch you need
 * for version 2.3.x use the following command
-> git checkout grayScottFoam-2.3.x
+```bash
+    git checkout grayScottFoam-2.3.x
+```
 * for version 3.0.x use the following command
-> git checkout grayScottFoam-3.0.x
+```bash
+    git checkout grayScottFoam-3.0.x
+```
 * for version 4.x use the following command
-> git checkout grayScottFoam-4.x
+```bash
+    git checkout grayScottFoam-4.x
+```
 * for version 7.x use the following command
-> git checkout grayScottFoam-7.x
+```bash
+    git checkout grayScottFoam-7.x
+```
 * After that pull it
-> git pull
+```bash
+    git pull
+```
 * Now you have everything and you can start compiling
 * For that just run the Allwmake script
-> ./Allwmake
+```bash
+    ./Allwmake
+```
 * Finally copy the tutorials to your run folder
-> cp -r tutorials $FOAM_RUN/
+```bash
+    cp -r tutorials $FOAM_RUN/
+```
 * Finished and enjoy
 
 ### Contribution guidelines ###
-* If you have questions, hints or any suggestions please email me to Tobias.Holzmann@Holzmann-cfd.de
+* Feel free to extend the project or update it if it is not already done
+* Pull requests are welcomed
+* If you have questions, hints or any suggestions please email to community@Holzmann-cfd.com
 
