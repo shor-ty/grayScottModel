@@ -1,5 +1,3 @@
-# README #
-
 Updated on April 2020 by Tobias Holzmann
 
 ## Description of the Gray-Scott-Model
@@ -72,4 +70,5 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 * Feel free to extend the project or update it if it is not already done
 * Pull requests are welcomed
 * If you have questions, hints or any suggestions please email to community@Holzmann-cfd.com
+
 
