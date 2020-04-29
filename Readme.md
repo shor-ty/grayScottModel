@@ -6,10 +6,10 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 
 ### OpenFOAM Versions ###
 * Generated for version
-** 2.3.x **
-** 3.0.x **
-** 4.x **
-** 7.x **
+  * 2.3.x
+  * 3.0.x
+  * 4.x
+  * 7.x
 
 ### What is this repository for? ###
 * This model calculates two coupled reaction-diffusion equations
@@ -34,8 +34,7 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 ```bash
     cd grayScottModel
 ```
-* Switch to the branch you need
-* for version 2.3.x use the following command
+* Switch to the branch you need (the master branch is always the actual one)
 ```bash
     git checkout grayScottFoam-2.3.x
 ```
@@ -47,9 +46,9 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 ```bash
     git checkout grayScottFoam-4.x
 ```
-* for version 7.x use the following command
+* for version 7.x use the following command (default branch)
 ```bash
-    git checkout grayScottFoam-7.x
+    git checkout master
 ```
 * After that pull it
 ```bash
