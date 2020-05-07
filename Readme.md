@@ -5,11 +5,15 @@ Updated on April 2020 by Tobias Holzmann
 The solver calculates two reaction-diffusion equations that are coupled. The model can be used to investigate into numerical schemes and code validations. There is also a convection term included and you can switch between implicit and explicit calculation.
 
 ### OpenFOAM Versions ###
-* Generated for version
+* Generated for the OpenFOAM Foundation version
   * 2.3.x
   * 3.0.x
   * 4.x
   * 7.x
+
+* Partially re-built for the ESI OpenFOAM version (+ version)
+  * v1912
+
 
 ### What is this repository for? ###
 * This model calculates two coupled reaction-diffusion equations
@@ -34,7 +38,7 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 ```bash
     cd grayScottModel
 ```
-* Switch to the branch you need (the master branch is always the actual one)
+* Switch to the branch you need (the master branch is always the actual one for the Foundation version)
 ```bash
     git checkout grayScottFoam-2.3.x
 ```
@@ -45,6 +49,10 @@ The solver calculates two reaction-diffusion equations that are coupled. The mod
 * for version 4.x use the following command
 ```bash
     git checkout grayScottFoam-4.x
+```
+* for version v1912 use the following command
+```bash
+    git checkout grayScottFoam-v1912
 ```
 * for version 7.x use the following command (default branch)
 ```bash
