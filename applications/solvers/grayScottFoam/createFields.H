@@ -61,9 +61,9 @@
 
     const Switch method(transportProperties.lookup("fields"));
 
-    autoPtr<volScalarField> kPtr(NULL);
+    autoPtr<volScalarField> kPtr;
 
-    autoPtr<volScalarField> fPtr(NULL);
+    autoPtr<volScalarField> fPtr;
 
     if (method)
     {
@@ -191,7 +191,7 @@
 
     const Switch convection(transportProperties.lookup("convection"));
 
-    autoPtr<volVectorField> UPtr(NULL);
+    autoPtr<volVectorField> UPtr;
 
     if (convection)
     {

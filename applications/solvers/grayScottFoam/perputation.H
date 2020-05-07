@@ -10,12 +10,12 @@
     forAll(AField, cellI)
     {
         //- Random number between 0 - 1
-        const scalar randNumber(obj.scalar01());
+        const scalar randNumber(obj.sample01<scalar>());
 
         bool addPerputation = false;
 
         //- Perpuataion +- of p percentage
-        if (obj.scalar01())
+        if (obj.sample01<scalar>())
         {
             addPerputation = true;
         }
